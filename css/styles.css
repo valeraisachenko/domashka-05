@@ -49,12 +49,11 @@ h1,h2,h3,h4,h4,h5,h6 {
     align-items: center;
     margin-right: auto;
     margin-left: auto;
-    width: 1176px;
+    width: 1200px;
 }
 
 img {
     display: block;
-    max-width: 100%;
     height: auto;
 }
 
@@ -94,6 +93,7 @@ img {
 
 .logo:hover {
     color: var(--accent-color);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-header {
@@ -183,11 +183,11 @@ img {
         cursor: pointer;
         color: var(--accent-color);
     
-
 }
 
 .fill:hover {
     fill: #212121;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -313,33 +313,6 @@ img {
     color: var(--adres-color);
 }
 
-/* .actions {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-
-} */
-
-/* .buttons {
-    color: #AFB1B8;
-    background-color: var(--primary-white-color);
-    border-radius: 50%;
-    width: 206px;
-    height: 44px;
-}
-
-.buttons:hover{
-    color: var(--primary-white-color);
-    background-color: var(--accent-color);
-}
-
-.button-icon{
-    width: 11px;
-    height: 11px;
-    fill: currentColor;
-} */
 
 .actions {
     display: flex;
@@ -415,6 +388,37 @@ img {
     letter-spacing: 0.03em;
 
     margin-bottom: 50px;
+}
+
+.prodact-thumb{
+    position: relative;
+}
+
+.product-actions{
+    position: absolute;
+    
+    display: flex;
+    bottom: 0;
+    background: rgba(47, 48, 58, 0.8);
+
+    width: 100%;
+    height: 70px;
+    justify-content: center;
+    align-items: center
+  
+    
+}
+
+.prodact-text{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
 }
 
 /*Наша команда*/
@@ -595,6 +599,12 @@ color: var(--accent-color);
 .button-list:hover {
     color: var(--primary-white-color);
     background-color:var(--accent-color) ;
+    box-shadow: 
+    0px 3px 1px rgba(0, 0, 0, 0.1), 
+    0px 1px 2px rgba(0, 0, 0, 0.08), 
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 /*Список товаров и услуг*/
@@ -630,7 +640,7 @@ position: relative;
 }
 
 .card-set:hover{
-
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     background: #FFFFFF;
     border: 1px solid #EEEEEE;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -656,39 +666,6 @@ font-family: 'Roboto';
     letter-spacing: 0.03em;
 
     color: var(--adres-color)
-}
-
-.prodact-actions{
-    top: 63px;
-    left: 24px;
-    position: absolute;
-    width: 322px;
-}
-
-.prodact-text{
-
-    margin: 0;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 28px;
-    letter-spacing: 0.03em;
-    color: var(--primary-white-color);
-
-    opacity: 0;
-
-    transition: 500ms opacity linear;
-}
-
-.prodact-text:hover{
-    background: rgba(33, 150, 243, 0.9);
-    opacity: 1;
-}
-
-.product-thumb:hover::before {
-    opacity: 1;
-
 }
 
 
@@ -848,7 +825,7 @@ font-family: 'Roboto';
     color: rgba(255, 255, 255, 0.6);
 }
 
-.info:hover{
+.info:hover {
     color: var(--accent-color);
 }
 
@@ -976,6 +953,7 @@ font-family: 'Roboto';
     overflow-y: auto ;
     overflow-x: hidden;
     transition: all 0.8s ease 0s;
+    
 }
 
 .popup:target{
@@ -984,7 +962,7 @@ font-family: 'Roboto';
 }
 
 .popup:target .popup__content {
-    transform: translate(0px, 0px);
+    transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
     opacity: 1;
 }
 
@@ -1005,12 +983,13 @@ font-family: 'Roboto';
 
     transition: all 0.8s ease 0s;
     opacity: 0;
-    transform: translate(0px, -100%);
+    transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
 
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    
 }  
 
 .popup__close{
@@ -1019,4 +998,48 @@ font-family: 'Roboto';
     top: 8px;
     color: black;
     text-decoration: none;
+}
+
+
+
+.box {
+    position: relative;
+    width: 370px;
+    height: 294px;
+    margin: 0 auto;
+    background-color: #bdbdbd;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 150, 243, 0.9);
+
+    transform: translatey(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.card-set:hover .overlay{
+        transform: translatey(0);
+    }
+
+.overlay p {
+    padding-top: 63px;
+    padding-left: 24px;
+    padding-bottom: 63px;
+    padding-right: 24px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.03em;
+    
+    color: #FFFFFF;
 }

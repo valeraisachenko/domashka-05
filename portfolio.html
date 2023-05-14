@@ -11,7 +11,7 @@
 </head>
     <!-- Шапка сайта -->
     <body>
-        <header class="page-header">
+        <header class="page-header wraper">
             <nav class="container main-nav">
                 <a class="logo-link" href="/">
                     <p class="logo">Web<span class="logos">Studio</span></p>
@@ -25,8 +25,8 @@
         
         
                 <ul class="auth-nav list">
-                    <li class="item"><a href="" class="link-adres">info@devstudio.com</a></li>
-                    <li class="item"><a href="" class="link-adres">+38 096 111 11 11</a></li>
+                    <li class="item"><a href="#popup" class="link-adres popup-link">info@devstudio.com</a></li>
+                    <li class="item"><a href="#popup" class="link-adres popup-link">+38 096 111 11 11</a></li>
                 </ul>
             </nav>
         </header>
@@ -198,5 +198,15 @@
                 </div>
             </div>
         </footer>
-    </body>
+
+        <div id="popup" class="popup">
+            <div class="popup__body">
+                <div class="popup__content">
+                    <a href="" class="popup__close">X</a>
+                </div>
+            </div>
+        </div>
+    
+        <script src="js/popups.js"></script>
+     </body>   
 </html>

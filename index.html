@@ -28,8 +28,8 @@
                 
                 
                     <ul class="auth-nav list">
-                        <li class="item"><a href="" class="link-adres">info@devstudio.com</a></li>
-                        <li class="item"><a href="" class="link-adres">+38 096 111 11 11</a></li>
+                        <li class="item"><a href="popup" class="link-adres">info@devstudio.com</a></li>
+                        <li class="item"><a href="popup" class="link-adres">+38 096 111 11 11</a></li>
                     </ul>
                 </nav>
         </header>
@@ -369,18 +369,13 @@
             </div>
         </footer>
 
-        <button data-modal-open>открыть</button>
-
-
-        <div class="backdrop is-hidden data-modal">
-            <div class="modal">
-                <button data-modal-close>X</button>
+        <div id="popup" class="popup">
+            <div class="popup__body">
+                <div class="popup__content">
+                    <a href="#" class="popup__close">X</a>
+                </div>
             </div>
         </div>
-
-
-        <script src="./js/modal.js"></script>  
-
 
     </body>
 </html>
